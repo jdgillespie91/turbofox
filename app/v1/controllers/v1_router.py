@@ -19,6 +19,7 @@ router = APIRouter(
     tags=["v1"],
 )
 
+
 @router.get("/")
 async def index():
     return RedirectResponse(url="/v5/budget")
