@@ -1,0 +1,38 @@
+[project]
+name = "turbofox"
+version = "1.0.0"
+description = "A replica of terminal.shop in the browser"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "bs4>=0.0.2",
+    "fastapi>=0.115.13",
+    "invoke>=2.2.0",
+    "logfire[fastapi,sqlite3]>=3.21.1",
+    "pydantic-settings>=2.9.1",
+    "uvicorn>=0.34.3",
+]
+
+[tool.ruff]
+fix = true
+include = ["app/**/*.py", "test/**/*.py"]
+line-length = 120
+
+[tool.ruff.lint]
+select = [
+    "B",
+    "C4",
+    "ERA",
+    "I",
+    "UP",
+]
+
+[tool.pyright]
+include = ["app", "test"]
+typeCheckingMode = "strict"
+venvPath = "."
+venv = ".venv"
+
+[tool.pytest.ini_options]
+addopts = "--cov=app/v1 --cov-report=term-missing"
+pythonpath = ["."]

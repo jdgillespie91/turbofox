@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/v5/static/favicon.ico">
+    <title>{% block title %}{% endblock %}</title>
+    <script src="/v5/static/js/alpine.js" defer></script>
+    <script src="/v5/static/js/htmx-2.0.4.js" defer></script>
+    <script src="/v5/static/js/tailwindcss.js"></script>
+    {% block head_scripts %}{% endblock %}
+    {% block head_styles %}{% endblock %}
+</head>
+<body class="bg-gray-100">
+    <!-- Navigation Bar -->
+    <nav class="bg-gray-800 text-white p-2 sticky top-0 z-50 font-mono">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-sm font-semibold">Catalyst</div>
+            <div class="space-x-4 text-xs">
+                <a href="/v5/budget" class="hover:text-gray-300">Budget</a>
+                <a href="/v5/transactions" class="hover:text-gray-300">Transactions</a>
+                <a href="/v5/settings" class="hover:text-gray-300">Settings</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-2">
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html> 
